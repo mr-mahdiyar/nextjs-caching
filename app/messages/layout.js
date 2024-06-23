@@ -1,9 +1,8 @@
 export default async function MessagesLayout({ children }) {
-  const response = await fetch('http://localhost:8080/messages', {
-    headers: {
-      'X-ID': 'layout',
-    },
-  });
+
+  // there is a same request in page.js file. but next just sends one of them and uses the response in all of application environment.
+  
+  const response = await fetch("http://localhost:8080/messages");
   const messages = await response.json();
   const totalMessages = messages.length;
 
